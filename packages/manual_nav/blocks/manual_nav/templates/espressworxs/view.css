@@ -1,0 +1,101 @@
+.nav-ewr {
+  text-align: right;
+}
+
+.nav-ewr li {
+  position: relative;
+  display: inline-block;
+  margin: 1.25rem 2rem;
+  float:right;
+}
+
+.nav-ewr li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: normal;
+  transition: 0.8s ease all;
+}
+
+.nav-ewr li a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-ewr li ul {
+  position: absolute;
+  transition: 0.4s cubic-bezier(0.4, 0.0, 0.2, 1) all;
+  width:300px;
+  background-color:black;
+  transform-origin: top;
+  transform: scaleY(0);
+  z-index: 2;
+  margin-top: 0.5rem;
+  padding-left: 0px;
+}
+
+.nav-ewr li ul:hover {
+  transform: scaleY(1);
+}
+
+.nav-ewr li ul li {
+  margin: 1rem 1rem;
+}
+
+.nav-ewr li a:hover + ul {
+  transform: scaleY(1);
+}
+
+.nav-ewr li a img {
+  margin-top: -10px;
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 1320px){
+  .nav-ewr li {
+    display: inline-block;
+
+    margin: 1.25rem 1rem 1.25rem 1rem;
+  }
+}
+
+@media (max-width: 1172px){
+  .nav-ewr li {
+    display: inline-block;
+
+    margin: 1.25rem 0.5rem 1.25rem 0.5rem;
+  }
+}
+
+@media (max-width: 991px){
+  .nav-ewr li {
+    position: relative;
+    display: block;
+    float:none;
+    clear:both;
+    padding-top: 1.25rem;
+    margin: 0rem 1rem 1.25rem 1rem;
+  }
+  .nav-ewr li ul {
+    position: relative;
+    transition: 0.4s cubic-bezier(0.4, 0.0, 0.2, 1) all;
+    width:100%;
+    background-color:black;
+    transform-origin: top;
+    height: 0;
+    transform: scaleY(1);
+    z-index: 2;
+    margin-top: 0.5rem;
+    padding-left: 0px;
+    overflow: hidden;
+  }
+
+  .nav-ewr li ul:hover {
+    height: auto;
+  }
+
+  .nav-ewr li:hover > ul{
+    height: auto;
+  }
+}

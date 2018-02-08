@@ -1,0 +1,27 @@
+db:
+  image: mariadb
+  restart: always
+  environment:
+  - MYSQL_ROOT_PASSWORD=080029
+  - MYSQL_USER=admin
+  - MYSQL_PASSWORD=080029
+  - MYSQL_DATABASE=c5db
+  # host volume
+  volumes:
+    - ./data/var/lib/mysql:/var/lib/mysql
+
+web:
+  image: concrete-docker:latest
+  restart: always
+  ports:
+  - "80:80"
+  - "443:443"
+  links:
+  - db
+  log_opt:
+    max-size: "512k"
+    max-file: "50"
+  # host volumes
+  volumes:
+    - ./data/etc/apache2:/etc/apache2
+    - ./data/var/www/html:/var/www/html
