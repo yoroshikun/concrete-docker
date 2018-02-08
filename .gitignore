@@ -1,2 +1,4 @@
 # Ignore Data (as it is not used on the server) #
 data
+packages
+.DS_Store
