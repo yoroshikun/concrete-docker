@@ -31,7 +31,7 @@ tianon/true true
 ```
 The container does not need to be started or running for sharing its data.
 
-###Create a Database
+### Create a Database
 This initializes one database for use with Concrete5. Remember replacing the the_root_password and the_db_user_password with real passwords.
 
 ```
@@ -112,8 +112,7 @@ To find out where the data is stored on disk, check with ``` docker inspect c5_D
 If you are storing your data in Docker volume containers, take a look at the ``` docker-clone ``` script: It will clone a set of containers including all its data. There is more info regarding it here on stackoverflow. The docker-clone script still needs to be complemented to be more generally useful beyond this project. It is heavily commented, so try it out and see, if it meets your needs. I would welcome any suggestions for improvements.
 
 ### Database management or fix problems with phpMyAdmin
-``` docker run --rm --link c5_db_1:mysql -p 12345:80 nazarpc/phpmyadmin
-```
+``` docker run --rm --link c5_db_1:mysql -p 12345:80 nazarpc/phpmyadmin ```
 Login as MYSQL_USER with your password in MYSQL_PASSWORD.
 
 ## License
