@@ -53,7 +53,7 @@ docker run -d --name=c5_web_1 \
 --link db:db \
 -p 80:80 \
 -p 443:443 \
-chriswayg/concrete5.7
+yoroshi/concrete-docker
 ```
 
 ## Composer
