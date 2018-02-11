@@ -113,6 +113,7 @@ If you are storing your data in Docker volume containers, take a look at the ```
 
 ### Database management or fix problems with phpMyAdmin
 ``` docker run --rm --link c5_db_1:mysql -p 12345:80 nazarpc/phpmyadmin ```
+
 Login as MYSQL_USER with your password in MYSQL_PASSWORD.
 
 ## License
