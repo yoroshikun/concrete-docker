@@ -1,7 +1,7 @@
 FROM chriswayg/apache-php
 MAINTAINER Drew Hutton
 
-# This image provides Concrete5.8.0.2 at root of site
+# This image provides Concrete5.8.0.1 at root of site
 
 # Install pre-requisites for Concrete5 & nano for editing conf files
 RUN apt-get update && \
@@ -17,9 +17,9 @@ RUN apt-get update && \
 
 # Find latest download details at https://www.concrete5.org/get-started
 # - for newer version: change Concrete5 version# & download url & md5
-ENV CONCRETE5_VERSION 5-8.0.2
-ENV C5_URL http://www.concrete5.org/download_file/-/view/92910/8497/
-ENV C5_MD5 19909aad2d7b7f389f16539654bb4e46
+ENV CONCRETE5_VERSION 5-8.0.1
+ENV C5_URL http://www.concrete5.org/download_file/-/view/92834/8497/
+ENV C5_MD5 6d53860c08cbee568e5dfa00adeb2e4c
 # nano and other commands will not work without this
 ENV TERM xterm
 
