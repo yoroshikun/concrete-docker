@@ -2,16 +2,16 @@ db:
   image: mariadb
   restart: always
   environment:
-  - MYSQL_ROOT_PASSWORD=080029
-  - MYSQL_USER=admin
-  - MYSQL_PASSWORD=080029
+  - MYSQL_ROOT_PASSWORD=ROOT_PASSWORD
+  - MYSQL_USER=USER_NAME
+  - MYSQL_PASSWORD=PASS_WORD
   - MYSQL_DATABASE=c5db
   # host volume
   volumes:
     - ./data/var/lib/mysql:/var/lib/mysql
 
 web:
-  image: concrete-docker:latest
+  image: yoroshi/concrete-docker-auto:latest
   restart: always
   ports:
   - "80:80"
