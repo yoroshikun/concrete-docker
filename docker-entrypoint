@@ -52,7 +52,7 @@ fi
 
 fi
 
-if [${PRODUCTION_MODE}]; then
+if [ -e "/var/www/html/packages" ]; then
   # ensure we are in the html directory
   cd /var/www/html/
   # If exists Replace repo
@@ -68,11 +68,11 @@ if [${PRODUCTION_MODE}]; then
   echo "[info] Pulled From Host"
   fi
   # If packages exists copy that file over the current file
-  if [ -e "/var/www/html/git/packages"]; then
+  if [ -e "/var/www/html/git/packages" ]; then
   yes | cp -rf /var/www/html/git/packages/* /var/www/html/packages/
   fi
   # If application exists copy that over the current file
-  if [ -e "/var/www/html/git/application"]; then
+  if [ -e "/var/www/html/git/application" ]; then
   yes | cp -rf /var/www/html/git/packages/* /var/www/html/application/
   fi
 

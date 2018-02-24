@@ -12,7 +12,7 @@ RUN apt-get update && \
       unzip \
       wget \
       patch \
-      git \
+      git-all \
       nano && \
     apt-get clean && rm -r /var/lib/apt/lists/*
 
