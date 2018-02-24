@@ -12,6 +12,7 @@ RUN apt-get update && \
       unzip \
       wget \
       patch \
+      git \
       nano && \
     apt-get clean && rm -r /var/lib/apt/lists/*
 
@@ -22,6 +23,8 @@ ENV C5_URL http://www.concrete5.org/download_file/-/view/100595/8497/
 ENV C5_MD5 4025fa119449c435a404f5dbdc8ed0a8
 # nano and other commands will not work without this
 ENV TERM xterm
+# Variable for production mode (For when the data is not saved in the same folder and or in production environment and want to update the site solely with git updates
+ENV PRODUCTION_MODE true
 
 # Copy apache2 conf dir & Download Concrete5
 # Perl script to enable ability to activate 'Pretty URLs' and redirection in .htaccess by 'AllowOverride'

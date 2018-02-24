@@ -52,5 +52,31 @@ fi
 
 fi
 
+if [${PRODUCTION_MODE}]; then
+  # ensure we are in the html directory
+  cd /var/www/html/
+  # If exists Replace repo
+  if [ -e "/var/www/html/git" ]; then
+  # Initialise the Git and clone from version online (set this yourself) You can get a token from your settings (OAuth or Special token)
+  git clone https://[token]@gitlab.com/[username]/[repo].git /git/
+  echo "[info] Cloned From Host"
+  fi
+  # If not
+  if [ ! -e "/var/www/html/git" ]; then
+  # Just update the content with master
+  git pull https://[token]@gitlab.com/[username]/[repo].git /git/
+  echo "[info] Pulled From Host"
+  fi
+  # If packages exists copy that file over the current file
+  if [ -e "/var/www/html/git/packages"]; then
+  yes | cp -rf /var/www/html/git/packages/* /var/www/html/packages/
+  fi
+  # If application exists copy that over the current file
+  if [ -e "/var/www/html/git/application"]; then
+  yes | cp -rf /var/www/html/git/packages/* /var/www/html/application/
+  fi
+
+fi
+
 # else default to run whatever the user wanted like "bash"
 exec "$@"
